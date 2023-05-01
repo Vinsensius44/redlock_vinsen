@@ -14,6 +14,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "ID: " . $row["ID"]. " - Nama: " . $row["Nama"]. " - Alamat: " . $row["Alamat"]. " - Jabatan: " . $row["Jabatan"]. "<br>";}
+        echo "Jumlah Pejabat : $result->num_rows";
 } else {
     echo "0 results";}
 $conn->close();
