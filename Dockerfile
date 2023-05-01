@@ -1,11 +1,12 @@
 FROM php:8.1-apache
 
+WORKDIR /var/www/html
+
 COPY ./web/ /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html/ \
     && chmod -R u=rwX,g=rX,o= /var/www/html/
 
-WORKDIR /var/www/vinsen
 
 COPY redlock-dbs.sql /docker-entrypoint-initdb.d/redlock-dbs.sql
 
